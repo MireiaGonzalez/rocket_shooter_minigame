@@ -10,11 +10,11 @@ func _ready() -> void:
 	#Because the anchor point for the sprite is at its center, the sprite size needs to be halfed
 	sprite_size = (sprite.texture.get_size() * sprite.scale)/2
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	velocity = Vector2(0, 0)
 	
 	if Input.is_action_pressed("move_right"):
