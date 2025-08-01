@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhmeygh2q2q1u"]
+
+[ext_resource type="Texture2D" uid="uid://cfcl0ysi1rika" path="res://assets/textures/bg.png" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://dvi5sf7ouvlnb" path="res://scenes/player.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://bhmkv4wwtj0hy" path="res://scenes/enemy_ship.tscn" id="3_lnu2h"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -24.0
+offset_top = -34.0
+offset_right = 1314.0
+offset_bottom = 746.0
+texture = ExtResource("1_uwrxv")
+stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("2_yqjtg")]
+position = Vector2(37, 350)
+rotation = -0.0284644
+
+[node name="EnemyShip" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(1227, 364)
