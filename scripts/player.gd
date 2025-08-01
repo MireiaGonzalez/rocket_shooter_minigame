@@ -1,9 +1,14 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
+
+signal took_damage
+
+var rocket_scene = preload("res://scenes/rocket.tscn")
+
+@onready var rocket_container = $RocketContainer
 
 var sprite_size: Vector2
 const speed: int = 300
-var rocket_scene = preload("res://scenes/rocket.tscn")
-@onready var rocket_container = $RocketContainer
+
 
 func _ready() -> void:
 	var sprite := $PlayerTexture
@@ -36,3 +41,9 @@ func shoot() -> void:
 	rocket_instance.global_position = global_position
 	rocket_instance.global_position.x += 80
 	rocket_container.add_child(rocket_instance)
+
+func take_damage() -> void:
+	emit_signal("took_damage")
+
+func die() -> void:
+	queue_free()

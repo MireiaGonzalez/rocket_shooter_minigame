@@ -34,4 +34,5 @@ position = Vector2(-280, 338)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_lnu2h")
 
+[connection signal="took_damage" from="Player" to="." method="_on_player_took_damage"]
 [connection signal="area_entered" from="Deathzone" to="." method="_on_deathzone_area_entered"]

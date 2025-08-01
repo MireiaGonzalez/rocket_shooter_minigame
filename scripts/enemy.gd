@@ -7,3 +7,7 @@ func _physics_process(delta: float) -> void:
 
 func die() -> void:
 	queue_free()
+
+func _on_body_entered(player: Player) -> void:
+	player.take_damage()
+	die()
