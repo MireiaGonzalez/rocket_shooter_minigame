@@ -10,14 +10,14 @@ var score: int = 0
 
 func _ready() -> void:
 	hud.set_score_label(score)
-	hud.set_lives_left(lives)
+	hud.set_lives(lives)
 
 func _on_deathzone_area_entered(enemy: Enemy) -> void:
 	enemy.die()
 
 func _on_player_took_damage() -> void:
+	hud.update_lives(lives, 1)
 	lives -= 1
-	hud.set_lives_left(lives)
 	if lives == 0:
 		player.die()
 		show_game_over_screen()
