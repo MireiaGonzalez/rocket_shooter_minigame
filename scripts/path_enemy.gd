@@ -1,4 +1,4 @@
-extends Path2D
+class_name PathEnemy extends Path2D
 
 @onready var pathfollow = $PathFollow2D
 @onready var enemy = $PathFollow2D/Enemy

@@ -40,3 +40,7 @@ func show_game_over_screen() -> void:
 	var gos_instance: GameOverScreen = gos_scene.instantiate()
 	gos_instance.set_score(score)
 	ui.add_child(gos_instance)
+
+func _on_enemy_spawner_path_enemy_spawned(path_enemy_instance: PathEnemy) -> void:
+	add_child(path_enemy_instance)
+	path_enemy_instance.enemy.connect("died", _on_enemy_died)
